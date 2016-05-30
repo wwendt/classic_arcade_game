@@ -9,6 +9,8 @@ var Enemy = function(speed, x, y) {
     this.x = x;
     this.y = y;
     this.speed = 100;
+    this.height = 80;
+    this.width = 30;
 
 
 };
@@ -41,6 +43,8 @@ var Player = function(x, y) {
     this.sprite = 'images/char-boy.png';
     this.x = x;
     this.y = y;
+    this.height = 30;
+    this.width = 80;
     
     };
 
@@ -114,6 +118,7 @@ Player.prototype.resetPlayer = function(x, y){
 };
 
 Player.prototype.checkCollisions = function (allEnemies, player) {
+    
     for (var i = 0; i < allEnemies.length; i++){
         if (allEnemies[i].x < player.width + player.x && allEnemies[i].width + allEnemies[i].x > player.x && allEnemies[i].y < player.y + player.height && allEnemies[i].height + allEnemies[i].y > player.y) {
            Player.resetPlayer(50, 400);
@@ -122,7 +127,7 @@ Player.prototype.checkCollisions = function (allEnemies, player) {
     }
     }
 
-
+Player.prototype.checkCollisions(allEnemies);
 
 
 // This listens for key presses and sends the keys to your
