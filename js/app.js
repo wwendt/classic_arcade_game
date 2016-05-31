@@ -113,21 +113,22 @@ var player = new Player(50,400);
 //Collision detection stuff
 
 Player.prototype.resetPlayer = function(x, y){
-    this.x = x;
-    this.y = y;
+
+    this.x = 50;
+    this.y = 400;
 };
 
 Player.prototype.checkCollisions = function (allEnemies, player) {
     
     for (var i = 0; i < allEnemies.length; i++){
         if (allEnemies[i].x < player.width + player.x && allEnemies[i].width + allEnemies[i].x > player.x && allEnemies[i].y < player.y + player.height && allEnemies[i].height + allEnemies[i].y > player.y) {
-           Player.resetPlayer(50, 400);
+           player.resetPlayer(50, 400);
         }
         
     }
     }
 
-Player.prototype.checkCollisions(allEnemies);
+
 
 
 // This listens for key presses and sends the keys to your
