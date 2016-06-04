@@ -53,12 +53,12 @@ Player.prototype.update = function(dt) {
     this.x * (dt);
     this.y * (dt);
 
-    if (this.x > 600){
-        this.x = -100;
+    if (this.x > 400){
+        this.x = 0;
     }
 
-    if (this.x < -600){
-        this.x = 400;
+    if (this.x < -50){
+        this.x = 0;
     }
 
     if (this.y < 0){
