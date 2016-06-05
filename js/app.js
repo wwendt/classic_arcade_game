@@ -118,10 +118,10 @@ Player.prototype.resetPlayer = function(x, y){
     this.y = 400;
 };
 
-Player.prototype.checkCollisions = function (allEnemies, player) {
-    
+Player.prototype.checkCollisions = function (allEnemies) {
+    var player = this;
     for (var i = 0; i < allEnemies.length; i++){
-        if (allEnemies[i].x < player.width + player.x && allEnemies[i].width + allEnemies[i].x > player.x && allEnemies[i].y < player.y + player.height && allEnemies[i].height + allEnemies[i].y > player.y) {
+        if (allEnemies[i].x < this.width + this.x && allEnemies[i].width + allEnemies[i].x > this.x && allEnemies[i].y < this.y + this.height && allEnemies[i].height + allEnemies[i].y > this.y) {
            player.resetPlayer(50, 400);
         }
         
