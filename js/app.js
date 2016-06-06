@@ -120,6 +120,7 @@ Player.prototype.resetPlayer = function(x, y){
 
 Player.prototype.checkCollisions = function (allEnemies) {
     var player = this;
+    console.log(this);
     for (var i = 0; i < allEnemies.length; i++){
         if (allEnemies[i].x < this.width + this.x && allEnemies[i].width + allEnemies[i].x > this.x && allEnemies[i].y < this.y + this.height && allEnemies[i].height + allEnemies[i].y > this.y) {
            player.resetPlayer(50, 400);
